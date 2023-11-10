@@ -88,16 +88,3 @@ response = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
 response = response.split("### Trả lời:")[1]
 ```
 
-### with vLLM
-
-PhoGPT can also run with [vLLM](https://github.com/vllm-project/vllm). See [vLLM docs](https://vllm.readthedocs.io/en/latest/getting_started/quickstart.html) for more details. 
-
-## Fine-tuning the model <a name="finetuning"></a>
-
-See [llm-foundry docs](https://github.com/mosaicml/llm-foundry/blob/main/scripts/train/README.md#llmfinetuning) for more details. To fully fine-tune `vinai/PhoGPT-7B5` or `vinai/PhoGPT-7B5-Instruct` on a single GPU A100 with 40GB memory, it is advisable to employ the `decoupled_lionw` optimizer with a `device_train_microbatch_size` set to 1.
-
-## Limitations <a name="limitations"></a>
-
-PhoGPT has certain limitations. For example, it is not good at tasks involving reasoning, coding or mathematics. PhoGPT may sometimes generate harmful, hate speech, biased responses, or answer unsafe questions. Users should be cautious when interacting with PhoGPT that can produce factually incorrect output.
-
-## [License](https://github.com/VinAIResearch/PhoGPT/blob/main/LICENSE)
